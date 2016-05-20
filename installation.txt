@@ -1,1 +1,90 @@
 #Installation of chef Master and Client
+
+//
+    1  cd /home/master/Downloads/
+    2  ls
+    3  mv chef-starter.zip ~/
+    4  cd ~/
+    5  ls
+    6  unzip chef-starter.zip 
+    7  ls
+    8  cd chef-repo/
+    9  ls
+   10  curl -L https://www.opscode.com/chef/install.sh | bash 
+   11  cd /tmp/
+   12  ls -la
+   13  cd ~/
+   14  ls
+   15  cd chef-repo/
+   16  ls
+   17  ifconfig
+   18  clear
+   19  knife 
+   20  vim /etc/hosts
+   21  ifconfig
+   22  ping masterchef
+   23  ping chefclient
+   24  ping clientchef
+   25  knife bootstrap
+   26  knife bootstrap --help
+   27  knife bootstrap chefclient -x root -P puppet
+   28  knife bootstrap clientchef -x root -P puppet
+   29  ifconfig
+   30  clear
+   31  ifconfig
+   32  vim /etc/hosts
+   33  ping clientchef
+   34  service iptables stop
+   35  vim /etc/ssh/sshd_config 
+   36  service sshd restart
+   37  clear
+   38  pwd
+   39  cd ~/chef-repo/
+   40  ls
+   41  knife cookbook create firstfile
+   42  ls
+   43  cd cookbooks/
+   44  ls
+   45  cd firstfile/
+   46  ls 
+   47  cd recipes/
+   48  ls
+   49  vim default.rb 
+   50  cd ..
+   51  ls
+   52  cd templates/
+   53  ls
+   54  cd default/
+   55  ls
+   56  vim ../../../firstfile/recipes/default.rb 
+   57  ls
+   58  vim default.rb
+   59  ls
+   60  vim abcdef.erb
+   61  cd ..
+   62  ls
+   63  cd ..
+   64  ls
+   65  cd attributes/
+   66  ls
+   67  vim default.rb
+   68  knife cookbook --help
+   69  cd ..
+   70  ls
+   71  cd ..
+   72  ls
+   73  cd ..
+   74  ls
+   75  knife cookbook upload firstfile
+   76  knife node 
+   77  knife node  --help
+   78  knife node run_list add clientchef "recipe[firstfile]"
+   79  cd cookbooks/firstfile/templates/default/abcdef.erb 
+   80  vim  cookbooks/firstfile/templates/default/abcdef.erb 
+   81  vim cookbooks/firstfile/attributes/default.rb 
+   82  cd cookbooks/firstfile/
+   83  ls
+   84  vim metadata.rb 
+   85  knife cookbook upload firstfile
+   
+   //
